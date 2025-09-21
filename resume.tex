@@ -1,0 +1,29 @@
+\documentclass[11pt, a4paper]{awesome-cv}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\colorlet{awesome}{awesome-skyblue}
+\setbool{acvSectionColorHighlight}{true}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\makeatletter
+\patchcmd{\@sectioncolor}{\color}{\mdseries\color}{}{}
+\makeatother
+\hypersetup{colorlinks=true, linkcolor=awesome, urlcolor=awesome, citecolor=awesome}
+%\hypersetup{draft} % remove for final
+\AtBeginDocument{\providecommand{\scholar}[2]{}} % neutralize if lingering
+
+\name{Cenk}{Baykal}
+\position{ML \& Quant Researcher}
+\email{baykal@alum.mit.edu}
+\homepage{baykalc.github.io}
+\linkedin{cenkbaykal}
+\extrainfo{\href{https://scholar.google.com/citations?user=lRxoOlwAAAAJ}{Google Scholar}}
+
+\begin{document}
+\makecvheader[C]
+\input{resume/education.tex}
+%\vspace{-2mm}
+\input{resume/experience.tex}
+%\vspace{-2mm}
+\input{resume/honors.tex}
+%\vspace{-2mm}
+\input{resume/publications} % plain .tex list; no biblatex/biber
+\end{document}
