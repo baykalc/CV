@@ -10,6 +10,7 @@
 - `latexmk -xelatex resume.tex` — produce `resume.pdf` with XeLaTeX and incremental recompiles.
 - `latexmk -xelatex -interaction=nonstopmode resume.tex` — CI-friendly build that surfaces errors without halting.
 - `latexmk -c` — clean intermediate artifacts after verifying the PDF.
+- `./compile_cv.sh` — shortcut wrapper around `latexmk -xelatex resume.tex` from the repo root.
 
 ## Coding Style & Naming Conventions
 - Indent LaTeX environments with two spaces and keep aligned `\begin`/`\end` pairs for readability.
