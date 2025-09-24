@@ -6,7 +6,15 @@
 \makeatletter
 \patchcmd{\@sectioncolor}{\color}{\mdseries\color}{}{}
 \makeatother
-\hypersetup{colorlinks=true, linkcolor=awesome, urlcolor=awesome, citecolor=awesome}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=awesome,
+  urlcolor=awesome,
+  citecolor=awesome,
+  pdftitle={Cenk Baykal -- Curriculum Vitae},
+  pdfauthor={Cenk Baykal},
+  pdfsubject={Curriculum Vitae}
+}
 %\hypersetup{draft} % remove for final
 \AtBeginDocument{\providecommand{\scholar}[2]{}} % neutralize if lingering
 
