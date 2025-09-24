@@ -198,7 +198,7 @@
       \newbool{isstart}\setbool{isstart}{true}%
       \ifthenelse{\isundefined{\@mobile}}{}{ \@mobile\setbool{isstart}{false} }%
       \ifthenelse{\isundefined{\@email}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{mailto:\@email}{\@email} }%
-      \ifthenelse{\isundefined{\@homepage}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{http://\@homepage}{\@homepage} }%
+      \ifthenelse{\isundefined{\@homepage}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{https://\@homepage}{\@homepage} }%
       \ifthenelse{\isundefined{\@github}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{https://github.com/\@github}{github.com/\@github} }%
       \ifthenelse{\isundefined{\@gitlab}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{https://gitlab.com/\@gitlab}{gitlab.com/\@gitlab} }%
       \ifthenelse{\isundefined{\@scholarid}}{}{ \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}\href{https://scholar.google.com/citations?hl=en&user=\@scholarid}{\@scholarname} }%
