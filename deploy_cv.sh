@@ -5,7 +5,7 @@ set -euo pipefail
 CV_REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WEBSITE_REPO_ROOT="${WEBSITE_REPO:-$CV_REPO_ROOT/../website}"
 OUTPUT_NAME="${OUTPUT_NAME:-BaykalCV.pdf}"
-SOURCE_PDF="$CV_REPO_ROOT/resume.pdf"
+SOURCE_PDF="$CV_REPO_ROOT/BaykalCV.pdf"
 TARGET_PDF="$WEBSITE_REPO_ROOT/$OUTPUT_NAME"
 
 # Ensure website repository exists
