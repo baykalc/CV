@@ -138,7 +138,10 @@
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+% Organization (right column) — keep readable, not italic
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{awesome} #1}}
+
+% (Reserved for future inline award styling)
 
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
@@ -229,7 +232,8 @@
 \newenvironment{cventries}{\vspace{\acvSectionContentTopSkip}\begin{center}}{\end{center}}
 
 \newcommand*{\cventrySchool}[5]{%
-  \vspace{-1.2mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
+  % Gentle negative space, but not enough to collide
+  \vspace{-0.6mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \if\relax\detokenize{#5}\relax\else \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\fi
@@ -237,7 +241,8 @@
 }
 
 \newcommand*{\cventry}[5]{%
-  \vspace{-0.2mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
+  % Small negative spacing to keep layout tight without collisions
+  \vspace{-0.4mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \if\relax\detokenize{#5}\relax\else \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\fi
@@ -257,12 +262,13 @@
 
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}\vspace{-2mm}
-  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.5cm} L{\textwidth - 5.0cm} R{2.5cm}}
+  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0.2ex}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.3cm} L{\textwidth - 6.6cm} R{4.3cm}}
 }{%
   \end{tabular*}\end{center}
 }
-\newcommand*{\cvhonor}[4]{\honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\}
+% Use en dash with thin spaces for a cleaner award/description separator
+\newcommand*{\cvhonor}[4]{\honordatestyle{#4} & \honorpositionstyle{#1} \,\textendash\, \honortitlestyle{#2} & \honorlocationstyle{#3} \\}
 
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}\vspace{-2.0mm}
@@ -274,10 +280,11 @@
 \newcommand*{\cvskill}[2]{\skilltypestyle{#1} & \skillsetstyle{#2} \\}
 
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}\begin{justify}\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  % Slightly relaxed spacing; avoids overlap while staying compact
+  \vspace{-2.0mm}\begin{justify}\begin{itemize}[leftmargin=2ex, topsep=0.4ex, itemsep=0.15ex]
   \setlength{\parskip}{0pt}\renewcommand{\labelitemi}{\textbullet}
 }{%
-  \end{itemize}\end{justify}\vspace{-4.0mm}
+  \end{itemize}\end{justify}\vspace{-1.0mm}
 }
 
 %-------------------- Bibliography -----------------------------
