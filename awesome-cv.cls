@@ -31,7 +31,7 @@
 %-------------------- Colors ------------------------------
 \definecolor{white}{HTML}{FFFFFF}
 \definecolor{black}{HTML}{000000}
-\definecolor{darkgray}{HTML}{333333}
+\definecolor{darkgray}{HTML}{2A2A2A}
 \definecolor{gray}{HTML}{5D5D5D}
 \definecolor{lightgray}{HTML}{9A9A9A}
 \definecolor{darktext}{HTML}{414141}
@@ -106,31 +106,31 @@
 % Name: colored last name, real Light weight first name, slight tracking
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{34pt}{1em}\headerfontlight\ls{2}\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{34pt}{1em}\headerfont\ls{2}\color{awesome} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{darktext} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{darktext} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8.3pt}{1em}\bodyfont\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{8.3pt}{1em}\bodyfont\ls{4}\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 
 % Sections: uppercase, tighter tracking, understated rule accent
-\newcommand*{\sectionstyle}[1]{{\fontsize{15.5pt}{1em}\bodyfont\bfseries\ls{2}\textsc{\sectioncolor{#1}}}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\ls{1.5}\sectioncolor{#1}}}
 \newcommand*{\acvSectionRuleColor}{awesome}
-\newcommand*{\acvSectionRuleThickness}{0.75pt}
+\newcommand*{\acvSectionRuleThickness}{1.0pt}
 \newcommand*{\acvSectionRuleSkip}{0.08em}
-\newcommand*{\acvSectionRuleLength}{0.78\linewidth}
+\newcommand*{\acvSectionRuleLength}{0.85\linewidth}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9.3pt}{1.05em}\bodyfontlight\color{text}}
 
 % Entries
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.3pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8.8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8.3pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9.1pt}{1.05em}\bodyfontlight\color{text} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9.3pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9.5pt}{1.07em}\bodyfontlight\color{text} #1}}
 
 % Subentries
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8.2pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
-\newcommand*{\subentrypositionstyle}[1]{{\fontsize{7.3pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\subentrypositionstyle}[1]{{\fontsize{7.5pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\subentrydatestyle}[1]{{\fontsize{7.3pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7.3pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8.1pt}{1.05em}\bodyfontlight\color{text} #1}}
@@ -175,7 +175,7 @@
 % Use a subtle colored bullet as the social separator (feels “designed” w/o icons)
 \newcommand{\acvHeaderIconSep}{}
 \newcommand{\acvHeaderSocialSep}{\ \textcolor{lighttext}{\textbullet}\ }
-\newcommand{\acvHeaderAfterSocialSkip}{3.5mm}
+\newcommand{\acvHeaderAfterSocialSkip}{3.0mm}
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 \newcommand{\acvHeaderBottomSkip}{3mm}
 \newcommand{\acvSectionTopSkip}{1mm}
@@ -233,7 +233,7 @@
 
 \newcommand*{\cventrySchool}[5]{%
   % Gentle negative space, but not enough to collide
-  \vspace{-0.6mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
+  \vspace{-0.2mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \if\relax\detokenize{#5}\relax\else \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\fi
@@ -242,7 +242,7 @@
 
 \newcommand*{\cventry}[5]{%
   % Small negative spacing to keep layout tight without collisions
-  \vspace{-0.4mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
+  \vspace{-0.1mm}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \ifempty{#2#3}{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \if\relax\detokenize{#5}\relax\else \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}\fi
@@ -262,8 +262,8 @@
 
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}\vspace{-2mm}
-  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0.2ex}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.3cm} L{\textwidth - 6.6cm} R{4.3cm}}
+  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0.1ex}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.0cm} L{\textwidth - 6.3cm} R{4.3cm}}
 }{%
   \end{tabular*}\end{center}
 }
@@ -281,7 +281,7 @@
 
 \newenvironment{cvitems}{%
   % Slightly relaxed spacing; avoids overlap while staying compact
-  \vspace{-2.0mm}\begin{justify}\begin{itemize}[leftmargin=2ex, topsep=0.4ex, itemsep=0.15ex]
+  \vspace{-2.0mm}\begin{justify}\begin{itemize}[leftmargin=2ex, topsep=0.5ex, itemsep=0.25ex]
   \setlength{\parskip}{0pt}\renewcommand{\labelitemi}{\textbullet}
 }{%
   \end{itemize}\end{justify}\vspace{-1.0mm}
