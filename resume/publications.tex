@@ -11,11 +11,11 @@
 % Publications use compact two-row tabular blocks (authors/title and venue/year).
 % Slightly increase the row spacing so entries breathe and the section
 % cleanly fills the second page without awkward bottom whitespace.
-\providecommand{\pubarraystretch}{1.16}% tuning knob
+\providecommand{\pubarraystretch}{1.10}% tuning knob
 \renewcommand{\arraystretch}{\pubarraystretch}% was 1.0
 % Add a hair of vertical space before each \cventry locally (class already
 % applies a tiny negative space). Etotoolbox is loaded by the class.
-\providecommand{\pubentryvspace}{0.35mm}% tuning knob
+\providecommand{\pubentryvspace}{0.45mm}% tuning knob
 \pretocmd{\cventry}{\vspace{\pubentryvspace}}{}{}
 \cvsubsection{Transformers \& Distillation}
 \vspace{0.8mm}
@@ -50,7 +50,7 @@
 \end{cventries}
 
 \cvsubsection{Compression \& Robotics}
-\vspace{0.8mm}
+\vspace{2.5mm}
 \begin{cventries}
   \cventry
     {\textbf{Cenk Baykal}*, Lucas Liebenwein*, Igor Gilitschenski, Dan Feldman, Daniela Rus}

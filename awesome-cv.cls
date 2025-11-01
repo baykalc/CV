@@ -135,11 +135,11 @@
 \newcommand*{\subentrylocationstyle}[1]{{\fontsize{7.3pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8.1pt}{1.05em}\bodyfontlight\color{text} #1}}
 
-\newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\honortitlestyle}[1]{{\fontsize{8.5pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 % Organization (right column) — keep readable, not italic
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{awesome} #1}}
+\newcommand*{\honorlocationstyle}[1]{{\fontsize{8.7pt}{1em}\bodyfontlight\color{awesome} #1}}
 
 % (Reserved for future inline award styling)
 
@@ -262,13 +262,13 @@
 
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}\vspace{-2mm}
-  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0.1ex}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.0cm} L{\textwidth - 6.3cm} R{4.3cm}}
+  \begin{center}\setlength\tabcolsep{0pt}\setlength{\extrarowheight}{0.5ex}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{2.3cm} L{\textwidth - 6.6cm} R{4.3cm}}
 }{%
   \end{tabular*}\end{center}
 }
 % Use en dash with thin spaces for a cleaner award/description separator
-\newcommand*{\cvhonor}[4]{\honordatestyle{#4} & \honorpositionstyle{#1} \,\textendash\, \honortitlestyle{#2} & \honorlocationstyle{#3} \\}
+\newcommand*{\cvhonor}[4]{\honordatestyle{#4} & \honorpositionstyle{#1} \hspace{0.3em}{\color{lightgray}\textendash}\hspace{0.3em} \honortitlestyle{#2} & \honorlocationstyle{#3} \\}
 
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}\vspace{-2.0mm}
@@ -281,10 +281,10 @@
 
 \newenvironment{cvitems}{%
   % Slightly relaxed spacing; avoids overlap while staying compact
-  \vspace{-2.0mm}\begin{justify}\begin{itemize}[leftmargin=2ex, topsep=0.5ex, itemsep=0.25ex]
+  \vspace{-2.5mm}\begin{justify}\begin{itemize}[leftmargin=2ex, topsep=0.25ex, itemsep=0.2ex]
   \setlength{\parskip}{0pt}\renewcommand{\labelitemi}{\textbullet}
 }{%
-  \end{itemize}\end{justify}\vspace{-1.0mm}
+  \end{itemize}\end{justify}\vspace{-1.5mm}
 }
 
 %-------------------- Bibliography -----------------------------
